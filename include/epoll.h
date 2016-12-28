@@ -46,6 +46,10 @@ struct epoll_event {
 };
 
 
+#ifdef	__cplusplus
+extern "C" {
+#endif
+
 epoll_t epoll_create();
 
 int epoll_close(epoll_t epoll_hnd);
@@ -54,5 +58,8 @@ int epoll_ctl(epoll_t epoll_hnd, int op, SOCKET sock, struct epoll_event* event)
 
 int epoll_wait(epoll_t epoll_hnd, struct epoll_event* events, int maxevents, int timeout);
 
+#ifdef	__cplusplus
+}
+#endif
 
 #endif  /* EPOLL_H_ */
